@@ -5,7 +5,7 @@ Define your joi validator class
 
 You can install the package globally or just include them in the scripts in the package.json
 ```
-"markdown-generator": "astro-markdown-generator -v ./src -o ./markdown"
+"apidocs": "astro-markdown-generator -v ./src -o ./docs"
 ```
 ```
 -s is the source path of validators

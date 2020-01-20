@@ -44,8 +44,9 @@ const curateDocumentation = (files) => {
         let schema;
         if (deprecated) {
           schema = j2sOld(joiSchema[checker]);
+        } else {
+          schema = j2s(joiSchema[checker]);
         }
-        schema = j2s(joiSchema[checker]);
         const { swagger } = schema;
         for (let key in swagger.properties) { // eslint-disable-line
           const temp = {
