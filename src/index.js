@@ -2,6 +2,7 @@
 const { argv } = require('yargs') // eslint-disable-line
   .alias('s', 'source')
   .alias('o', 'output')
+  .alias('d', 'deprecated')
   .demandOption(['s', 'o'])
   .help('help')
   .example('markdown-generator -s ./src -o ./markdown');
@@ -11,9 +12,11 @@ const glob = require('glob');
 const path = require('path');
 const fs = require('fs-extra');
 const j2s = require('hapi-joi-to-swagger');
+const j2sOld = require('joi-to-swagger');
 
 const validatorFile = argv.source;
 const outputDir = argv.output;
+const { deprecated } = argv;
 
 const checkers = {
   headers: 'header',
@@ -38,7 +41,12 @@ const curateDocumentation = (files) => {
     };
     Object.keys(checkers).forEach((checker) => {
       if (!_.isEmpty(joiSchema[checker])) {
-        const { swagger } = j2s(joiSchema[checker]);
+        let schema;
+        if (deprecated) {
+          schema = j2sOld(joiSchema[checker]);
+        }
+        schema = j2s(joiSchema[checker]);
+        const { swagger } = schema;
         for (let key in swagger.properties) { // eslint-disable-line
           const temp = {
             name: key,

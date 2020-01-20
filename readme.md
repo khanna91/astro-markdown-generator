@@ -10,6 +10,7 @@ You can install the package globally or just include them in the scripts in the 
 ```
 -s is the source path of validators
 -o is the location of the markdown file will be generated
+-d if you are running deprecated version of joi
 ```
 
 Example for multiple validator file
