@@ -35,7 +35,7 @@ const curateDocumentation = (files) => {
       markDown += `### ${file.description}\n\n\n`;
     }
     markDown += `---\n`;
-    const { joiSchema } = file;
+    const joiSchema = file.joiSchema || file.JoiSchema;
     const paramsObject = {
       headers: { title: 'Header Params', data: [] }, params: { title: 'Path Params', data: [] }, query: { title: 'Query Params', data: [] }, body: { title: 'Body Params', data: [] }
     };
