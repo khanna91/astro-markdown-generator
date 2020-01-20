@@ -15,7 +15,8 @@
     "@hapi/joi": "^17.1.0",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
-    "hapi-joi-to-swagger": "^3.2.0"
+    "hapi-joi-to-swagger": "^3.2.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

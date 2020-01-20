@@ -6,6 +6,7 @@ const { argv } = require('yargs') // eslint-disable-line
   .help('help')
   .example('markdown-generator -s ./src -o ./markdown');
 
+const _ = require('lodash');
 const glob = require('glob');
 const path = require('path');
 const fs = require('fs-extra');
@@ -36,7 +37,7 @@ const curateDocumentation = (files) => {
       headers: { title: 'Header Params', data: [] }, params: { title: 'Path Params', data: [] }, query: { title: 'Query Params', data: [] }, body: { title: 'Body Params', data: [] }
     };
     Object.keys(checkers).forEach((checker) => {
-      if (joiSchema[checker]) {
+      if (!_.isEmpty(joiSchema[checker])) {
         const { swagger } = j2s(joiSchema[checker]);
         for (let key in swagger.properties) { // eslint-disable-line
           const temp = {
