@@ -1,6 +1,6 @@
 {
   "name": "@astro-my/markdown-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Markdown generator for API documentation",
   "main": "src/index.js",
   "author": "Rahul Khanna (khanna.mailme@gmail.com)",
