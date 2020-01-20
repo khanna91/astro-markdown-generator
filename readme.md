@@ -1,11 +1,11 @@
-A library to generate a markup files documentation from joi file. The output will be in md format.
+A library to generate a mark down files documentation from joi file. The output will be in md format.
 
 Usage:
 Define your joi validator class
 
 You can install the package globally or just include them in the scripts in the package.json
 ```
-    "markup-generator": "astro-markup-generator -v ./src -o ./markdown"
+"markdown-generator": "astro-markdown-generator -v ./src -o ./markdown"
 ```
 ```
 -s is the source path of validators
