@@ -16,6 +16,7 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "hapi-joi-to-swagger": "^3.2.0",
+    "joi": "^14.3.1",
     "joi-to-swagger": "^3.3.0",
     "lodash": "^4.17.15"
   },
