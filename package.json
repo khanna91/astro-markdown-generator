@@ -1,0 +1,36 @@
+{
+  "name": "@astro-my/markdown-generator",
+  "version": "0.0.1",
+  "description": "Markdown generator for API documentation",
+  "main": "src/index.js",
+  "author": "Rahul Khanna (khanna.mailme@gmail.com)",
+  "license": "MIT",
+  "keywords": [
+    "swagger",
+    "joi",
+    "converter",
+    "markdown"
+  ],
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "hapi-joi-to-swagger": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-astro": "^1.0.8",
+    "eslint-plugin-import": "^2.19.1"
+  },
+  "scripts": {
+    "lint": "eslint ./src",
+    "test": "astro-markdown-generator"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanna91/astro-markdown-generator.git"
+  },
+  "bin": {
+    "astro-markdown-generator": "./src/index.js"
+  }
+}
